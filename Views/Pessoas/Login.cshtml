@@ -1,0 +1,37 @@
+﻿@model GWI.Models.Pessoas.Pessoas;
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!--  /main desktop/  -->
+<main class="pag_sem_cotacoes">
+    <!-- pagina de cadastro de usuario -->
+    <section class="secao-cadastro login">
+        <h2 class="titulo-cadastro">Login</h2>
+
+        <a asp-controller="Noticias" asp-action="Index">
+            <button class="cadastro-close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#141414" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+        </a>
+
+        <form class="form-cadastro" asp-controller="Pessoas" asp-action="Login">
+            <label asp-for="p_email" class="label-cadastro" for="email">Email:</label>
+            <input asp-for="p_email" class="input-cadastro" type="email" name="p_email" placeholder="Ex: joaozinho@email.com">
+            <span asp-validation-for="p_email" class="text-danger"></span>
+
+            <label asp-for="p_senha" class="label-cadastro" for="senha">Senha:</label>
+            <input asp-for="p_senha" class="input-cadastro" type="password" name="p_senha">
+            <span asp-validation-for="p_senha" class="text-danger"></span>
+            <div>
+                <input class="submit-cadastro dois-botoes-esquerda" type="submit" value="Entrar">
+                <a asp-controller="Pessoas" asp-action="Create">
+                    <button class="submit-cadastro dois-botoes-direita" type="button">Cadastre-Se</button>
+                </a>
+            </div>
+        </form>
+    </section>
+</main>
